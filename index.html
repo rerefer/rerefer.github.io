@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Redirect that hides HTTP referer</title>
+<meta name=viewport content="width=device-width">
+<style>
+html {
+  color-scheme: dark light;
+  font-family: system-ui, sans-serif;
+}
+</style>
+<h1>Redirect that hides HTTP referer</h1>
+<p>Example: <a href=https://rerefer.github.io#https://httpbin.org/headers id=link>https://rerefer.github.io#https://httpbin.org/headers</a></p>
+<noscript>
+  <p>Implemented entirely client-side, doesn't track your URLs. This means it requires JavaScript, though.</p>
+</noscript>
+<script>
+  var url = location.hash.replace(/^#/, "");
+  if (url) {
+    link.href = url;
+    link.textContent = url;
+    link.click();
+  }
+</script>
